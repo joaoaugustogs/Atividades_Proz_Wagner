@@ -1,0 +1,73 @@
+/* Fundo */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilização do container */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 320px;
+    color: white;
+}
+
+/* Estilização dos campos de entrada */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+input:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* Estilização do botão */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #ff8c00;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #e67600;
+    transform: scale(1.05);
+}
+
+/* Estilização do resultado */
+.resultado {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.resultado.show {
+    opacity: 1;
+    transform: translateY(0);
+}

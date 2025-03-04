@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Produto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+        }
+        .error.show {
+            display: block;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cadastro de Produto</h1>
+
+    <form id="productForm">
+        <div class="form-group">
+            <label for="productName">Nome do Produto:</label>
+            <input type="text" id="productName" name="productName">
+            <span class="error" id="nameError">O nome do produto é obrigatório.</span>
+        </div>
+
+        <div class="form-group">
+            <label for="productQuantity">Quantidade:</label>
+            <input type="number" id="productQuantity" name="productQuantity">
+        </div>
+
+        <div class="form-group">
+            <label for="productValue">Valor Unitário:</label>
+            <input type="number" step="0.01" id="productValue" name="productValue">
+        </div>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <div class="output" id="output">
+        <h2>Dados Cadastrados:</h2>
+        <p><strong>Nome:</strong> <span id="outputName"></span></p>
+        <p><strong>Quantidade:</strong> <span id="outputQuantity"></span></p>
+        <p><strong>Valor Unitário:</strong> <span id="outputValue"></span></p>
+    </div>
+
+    <script>
+        document.getElementById('productForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const productName = document.getElementById('productName').value.trim();
+            const productQuantity = document.getElementById('productQuantity').value;
+            const productValue = document.getElementById('productValue').value;
+
+            const nameError = document.getElementById('nameError');
+
+            if (productName === '') {
+                nameError.classList.add('show');
+                return;
+            } else {
+                nameError.classList.remove('show');
+            }
+
+            const productData = {
+                nome: productName,
+                quantidade: productQuantity,
+                valor: productValue
+            };
+
+            document.getElementById('outputName').textContent = productData.nome;
+            document.getElementById('outputQuantity').textContent = productData.quantidade;
+            document.getElementById('outputValue').textContent = productData.valor;
+
+            document.getElementById('output').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>

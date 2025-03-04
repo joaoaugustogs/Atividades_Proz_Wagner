@@ -1,0 +1,1 @@
+A estrutura de condicional que mais se encaixa é o if-else, pois o programa precisa verificar se o time ganhou ou perdeu cada partida e, com base nisso, atribuir a pontuação correta.

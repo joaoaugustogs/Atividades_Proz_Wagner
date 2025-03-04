@@ -1,0 +1,1 @@
+Para ser campeão, o time deve garantir uma pontuação maior do que a dos outros times. Considerando que a pontuação máxima possível é 18 pontos, o time deve ganhar pelo menos 4 partidas para garantir uma pontuação competitiva (14 pontos). No entanto, o número exato de vitórias necessárias depende da pontuação dos outros times.

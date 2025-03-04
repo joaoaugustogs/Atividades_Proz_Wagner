@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competição de Futsal</title>
+</head>
+<body>
+    <script>
+        
+        let pontuacaoTotal = 0;
+
+        for (let i = 1; i <= 6; i++) {
+            let resultado = prompt(`Partida ${i}: O time ganhou? (sim/não)`).toLowerCase();
+
+            if (resultado === "sim") {
+                pontuacaoTotal += 3;
+            } else {
+                pontuacaoTotal += 1;
+            }
+        }
+
+        alert(`Pontuação total do time: ${pontuacaoTotal}`);
+
+        if (pontuacaoTotal === 18) {
+            alert("Campeão absoluto! O time venceu todas as partidas!");
+        } else if (pontuacaoTotal >= 14) {
+            alert("Parabéns! O time foi campeão!");
+        } else {
+            alert("O time não foi campeão, mas jogou bem!");
+        }
+    </script>
+</body>
+</html>

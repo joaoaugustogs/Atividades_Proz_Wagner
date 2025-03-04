@@ -1,28 +1,22 @@
-// Importa o módulo readline para ler a entrada do usuário
-const readline = require('readline');
+function exibirTabuada() {
 
-// Cria uma interface para ler a entrada do usuário
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+  const numero = document.getElementById("numero").value;
+  const resultadoDiv = document.getElementById("resultado");
 
-// Solicita ao usuário que insira um número
-rl.question("Digite um número para ver a tabuada: ", (numero) => {
-  // Converte o valor de 'numero' para um inteiro
-  let n = parseInt(numero);
+  resultadoDiv.innerHTML = '';
 
-  // Verifica se a conversão deu certo
-  if (isNaN(n)) {
-    console.log("Por favor, insira um número válido.");
+  if (isNaN(numero) || numero === '') {
+      alert("Por favor, informe um número válido.");
   } else {
-    // Exibe a tabuada no console
-    console.log(`Tabuada de ${n}:`);
-    for (let i = 1; i <= 10; i++) {
-      console.log(`${i} x ${n} = ${i * n}`);
-    }
-  }
 
-  // Fecha a interface readline
-  rl.close();
-});
+      const num = parseInt(numero);
+
+
+      let resultadoHTML = `<h3>Tabuada de ${num}:</h3><ul>`;
+      for (let i = 1; i <= 10; i++) {
+          resultadoHTML += `<li>${num} x ${i} = ${num * i}</li>`;
+      }
+      resultadoHTML += '</ul>';
+      resultadoDiv.innerHTML = resultadoHTML;
+  }
+}

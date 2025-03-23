@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Usuários</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 400px;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Busca de Usuário por ID</h1>
+    
+
+    <input type="number" id="userId" placeholder="Digite o ID do usuário" />
+    <button onclick="buscarUsuario()">Buscar</button>
+
+    <div id="resultado" class="result"></div>
+
+
+    <script src="consulta.js"></script>
+
+</body>
+</html>
